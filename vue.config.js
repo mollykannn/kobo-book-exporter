@@ -5,6 +5,7 @@ const { GenerateSW } = require('workbox-webpack-plugin')
 module.exports = {
   productionSourceMap: false,
   runtimeCompiler: true,
+  publicPath: process.env.NODE_ENV === 'production' ? '/kobo-book-exporter/' : '/',
   chainWebpack: config => {
     config
       .plugin('html')
