@@ -17,7 +17,7 @@ importScripts(
   "/kobo-book-exporter/precache-manifest.e5f63e2c888586e0065e7bf5d30a74b5.js"
 );
 
-workbox.core.setCacheNameDetails({prefix: "kobo-book-exporter-v1"});
+workbox.core.setCacheNameDetails({prefix: "kobo-book-exporter-v2"});
 
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
