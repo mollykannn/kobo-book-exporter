@@ -27,7 +27,7 @@ module.exports = {
           ]
         }),
         new GenerateSW({
-          cacheId: 'kobo-book-exporter-v1',
+          cacheId: 'kobo-book-exporter-v2',
           skipWaiting: false,
           clientsClaim: false
         })
