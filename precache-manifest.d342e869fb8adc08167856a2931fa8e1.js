@@ -24,7 +24,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kobo-book-exporter/js/chunk-vendors.1f3aebd6.js"
   },
   {
-    "revision": "9d80634fc9bfe37b643b5bdf5ed68539",
+    "revision": "5f0e389f1b26504e84f5849a9d3acdee",
     "url": "/kobo-book-exporter/manifest.json"
   },
   {
