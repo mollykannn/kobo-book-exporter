@@ -1,6 +1,6 @@
 # kobo-book-exporter
 
-Export Kobo Book Highlight & Book List.
+Export Kobo Book Highlight (.md) & Book List (.csv, .json & .md).
 
 [https://mollykannn.github.io/kobo-book-exporter](https://mollykannn.github.io/kobo-book-exporter)
 ![Screenshot](https://mollykannn.github.io/kobo-book-exporter/img/screenshot.png)

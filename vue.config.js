@@ -1,6 +1,5 @@
 const StyleLintPlugin = require('stylelint-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const { GenerateSW } = require('workbox-webpack-plugin')
 
 module.exports = {
   productionSourceMap: false,
@@ -25,11 +24,6 @@ module.exports = {
           patterns: [
             { from: 'node_modules/sql.js/dist/sql-wasm.wasm', to: './' }
           ]
-        }),
-        new GenerateSW({
-          cacheId: 'kobo-book-exporter-v2',
-          skipWaiting: false,
-          clientsClaim: false
         })
       ]
     }
@@ -43,7 +37,7 @@ module.exports = {
     manifestOptions: {
       name: 'Kobo Book Exporter',
       hort_name: 'Kobo Book Exporter',
-      start_url: 'index.html',
+      start_url: '/',
       display: 'standalone',
       theme_color: '#0079d2',
       background_color: '#fff'
@@ -52,8 +46,7 @@ module.exports = {
       appleTouchIcon: 'img/icons/apple-touch-icon.png',
       maskIcon: null,
       msTileImage: null
-    },
-    workboxPluginMode: 'GenerateSW'
+    }
   },
   devServer: {
     open: true,
