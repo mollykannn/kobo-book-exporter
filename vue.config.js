@@ -37,7 +37,7 @@ module.exports = {
     manifestOptions: {
       name: 'Kobo Book Exporter',
       hort_name: 'Kobo Book Exporter',
-      start_url: '/',
+      start_url: '/kobo-book-exporter/',
       display: 'standalone',
       theme_color: '#0079d2',
       background_color: '#fff'
