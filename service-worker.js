@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/kobo-book-exporter/precache-manifest.0d9d5105dcd5e7cf0c9d0a42dfc1c5ac.js"
+  "/kobo-book-exporter/precache-manifest.6ec9dad7944b5129b68613ef389201ef.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "kobo-book-exporter"});
