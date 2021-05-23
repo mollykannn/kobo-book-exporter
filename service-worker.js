@@ -14,10 +14,10 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/kobo-book-exporter/precache-manifest.e5f63e2c888586e0065e7bf5d30a74b5.js"
+  "/kobo-book-exporter/precache-manifest.0d9d5105dcd5e7cf0c9d0a42dfc1c5ac.js"
 );
 
-workbox.core.setCacheNameDetails({prefix: "kobo-book-exporter-v2"});
+workbox.core.setCacheNameDetails({prefix: "kobo-book-exporter"});
 
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
