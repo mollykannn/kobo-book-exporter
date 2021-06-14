@@ -65,7 +65,7 @@
     <footer class="footer">
       Created by
       <a href="https://github.com/mollykannn">Molly Kan</a>
-      / Reference from <a href="http://www.vixual.net/blog/archives/117">Kobo Exporter: 匯出 Kobo 電子書的書籍清單與註記資料 (劃線與筆記) | Vixual</a>
+      / Retrieved from <a href="http://www.vixual.net/blog/archives/117">Kobo Exporter: 匯出 Kobo 電子書的書籍清單與註記資料 (劃線與筆記) | Vixual</a>
       <br />
       Icons made by <a
         href="http://www.freepik.com/"
