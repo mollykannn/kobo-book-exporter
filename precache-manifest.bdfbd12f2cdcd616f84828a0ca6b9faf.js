@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "24d55bc325eeffae0f01",
+    "revision": "14e0f65e2306687112b3",
     "url": "/kobo-book-exporter/css/app.dfa15c21.css"
   },
   {
@@ -12,16 +12,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kobo-book-exporter/img/screenshot.png"
   },
   {
-    "revision": "a464d76c57b2846c3964db7115ed58e4",
+    "revision": "6071707833aee88c7187a88e94f0ae1b",
     "url": "/kobo-book-exporter/index.html"
   },
   {
-    "revision": "24d55bc325eeffae0f01",
-    "url": "/kobo-book-exporter/js/app.0d7d5017.js"
+    "revision": "14e0f65e2306687112b3",
+    "url": "/kobo-book-exporter/js/app.efb73466.js"
   },
   {
-    "revision": "fe122f64b492eca81c93",
-    "url": "/kobo-book-exporter/js/chunk-vendors.1f3aebd6.js"
+    "revision": "1247786527548ee237bf",
+    "url": "/kobo-book-exporter/js/chunk-vendors.30be87bf.js"
   },
   {
     "revision": "5f0e389f1b26504e84f5849a9d3acdee",
