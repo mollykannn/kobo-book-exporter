@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Auto Merge
-        uses: ahmadnassri/action-dependabot-auto-merge@v2
+        uses: ridedott/merge-me-action@v2
         with:
-          target: minor
-          github-token: ${{ secrets.ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          PRESET: DEPENDABOT_MINOR
