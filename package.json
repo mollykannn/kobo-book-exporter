@@ -29,7 +29,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^5.0.0",
-    "eslint-plugin-vue": "^7.0.0",
+    "eslint-plugin-vue": "^7.18.0",
     "node-sass": "^4.12.0",
     "postcss": "^8.2.15",
     "sass-loader": "^8.0.2",
