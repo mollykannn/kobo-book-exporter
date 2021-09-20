@@ -5,7 +5,7 @@ on:
     types:
       - completed
     workflows:
-      - 'Auto approve'
+      - 'Auto Merge'
   push:
     branches:
       - main
@@ -25,7 +25,7 @@ jobs:
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@3.6.2
       with:
-        github-token: ${{ secrets.ACCESS_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: gh-pages
         FOLDER: dist
         CLEAN: true
