@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="zh-Hant-hk">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="author" content="Molly Kan" />
-    <meta name="description" content="<%= htmlWebpackPlugin.options.title %>">
+    <meta name="description" content="Kobo Book Exporter">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <link rel="icon" href="<%= BASE_URL %>img/icons/favicon.ico">
+    <link rel="alternate icon" href="/kobo-book-exporter/img/icons/favicon.ico" type="image/png" sizes="16x16">
+    <link rel="apple-touch-icon" href="/kobo-book-exporter/img/icons/apple-touch-icon.png" sizes="180x180">
+    <meta name="theme-color" content="#0079d2">
     <!-- Facebook -->
     <meta property="og:title" content="Kobo Book Exporter" />
     <meta property="og:type" content="website" />
@@ -19,13 +21,13 @@
     <meta name="twitter:title" content="Kobo Book Exporter" />
     <meta name="twitter:creator" content="@MollyKannn" />
     <meta name="twitter:image" content="https://mollykannn.github.io/kobo-book-exporter/img/og-image.jpg" />
-    <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
     <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong>We're sorry but doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
     <!-- built files will be auto injected -->
   </body>
 </html>

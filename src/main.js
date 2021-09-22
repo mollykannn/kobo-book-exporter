@@ -1,8 +1,13 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router'
+import '@/assets/css/style.scss'
+import { registerSW } from 'virtual:pwa-register'
 
-import '../src/assets/css/style.scss'
-import './registerServiceWorker'
+const updateSW = registerSW({
+  onNeedRefresh () {},
+  onOfflineReady () {}
+})
 
-createApp(App).use(router).mount('#app')
+updateSW()
+
+createApp(App).mount('#app')
