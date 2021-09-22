@@ -1,16 +1,22 @@
 name: Auto Merge
+on: pull_request_target
 
-on:
-  pull_request_target:
+permissions:
+  pull-requests: write
+  contents: write
 
 jobs:
-  merge-me:
-    name: Auto Merge
-    if: github.actor == 'dependabot[bot]'
+  dependabot:
     runs-on: ubuntu-latest
+    if: ${{ github.actor == 'dependabot[bot]' }}
     steps:
-      - name: Auto Merge
-        uses: ridedott/merge-me-action@v2
+      - name: Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v1.1.1
         with:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          PRESET: DEPENDABOT_MINOR
+          github-token: '${{ secrets.ACCESS_TOKEN }}'
+      - name: Enable auto-merge for Dependabot PRs
+        run: gh pr merge --auto --merge "$PR_URL"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GITHUB_TOKEN: ${{secrets.ACCESS_TOKEN}}
