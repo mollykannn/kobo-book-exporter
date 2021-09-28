@@ -14,13 +14,16 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
+    - name: checkout code repository
       uses: actions/checkout@v2.3.1
+
+    - name: install pnpm
+      run: npm i pnpm@latest -g
 
     - name: Install and Build
       run: |
-        yarn install
-        yarn run build
+        pnpm install
+        pnpm run build
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@3.6.2
