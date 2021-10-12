@@ -11,6 +11,71 @@ $Small: "only screen and (max-width : 650px)";
   padding: 0;
 }
 
+* {
+  --light-basic: hsl(0 0% 100%);
+  --light-background: hsl(30 50% 97%);
+  --light-title: hsl(0 0% 15%);
+  --light-text: hsl(0, 0%, 30%);
+  --light-text-hover: hsl(0, 0%, 93%);
+  --light-button: hsl(140, 100%, 38%);
+  --light-button-hover: hsl(140, 100%, 28%);
+  --light-button-text: hsl(0 0% 100%);
+  --dark-basic: hsl(0 0% 0%);
+  --dark-background: hsl(30 0% 10%);
+  --dark-title: hsl(0 0% 85%);
+  --dark-text: hsl(0, 0%, 70%);
+  --dark-text-hover: hsl(0, 0%, 20%);
+  --dark-button: hsl(140, 85%, 30%);
+  --dark-button-hover: hsl(140, 100%, 20%);
+  --dark-button-text: hsl(0 0% 0%);
+}
+
+:root {
+  --background: var(--light-background);
+  --basic: var(--light-basic);
+  --title: var(--light-title);
+  --text: var(--light-text);
+  --text-hover: var(--light-text-hover);
+  --button: var(--light-button);
+  --button-hover: var(--light-button-hover);
+  --button-text: var(--light-button-text);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--dark-background);
+    --basic: var(--dark-basic);
+    --title: var(--dark-title);
+    --text: var(--dark-text);
+    --text-hover: var(--dark-text-hover);
+    --button: var(--dark-button);
+    --button-hover: var(--dark-button-hover);
+    --button-text: var(--dark-button-text);
+  }
+}
+
+[data-theme="light"] {
+  --background: var(--light-background);
+  --basic: var(--light-basic);
+  --title: var(--light-title);
+  --text: var(--light-text);
+  --text-hover: var(--light-text-hover);
+  --button: var(--light-button);
+  --button-hover: var(--light-button-hover);
+  --button-text: var(--light-button-text);
+}
+
+[data-theme="dark"] {
+  --background: var(--dark-background);
+  --basic: var(--dark-basic);
+  --title: var(--dark-title);
+  --text: var(--dark-text);
+  --text-hover: var(--dark-text-hover);
+  --button: var(--dark-button);
+  --button-hover: var(--dark-button-hover);
+  --button-text: var(--dark-button-text);
+}
+
 html {
   box-sizing: border-box;
   height: 100%;
@@ -20,7 +85,7 @@ html {
 body {
   height: 100%;
   margin: 0;
-  background-color: #fbf8f5;
+  background-color: var(--background);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
@@ -35,21 +100,21 @@ button {
   border: none;
   outline: none;
   background: none;
-  background-color: #00c141;
-  color: #fff;
+  background-color: var(--button);
+  color: var(--button-text);
   font: inherit;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #008f30;
+  background-color: var(--button-hover);
 }
 
 #app {
   max-width: 1170px;
   min-height: 100vh;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: var(--basic);
 
   @media #{$Extra-large} {
     max-width: 980px;
@@ -81,13 +146,83 @@ button:hover {
   display: block;
   max-width: 600px;
   margin: 1rem auto;
-  color: #3b3b3b;
+  color: var(--text);
   font-size: 90%;
   line-height: 1.5;
 }
 
+.switch-column {
+  text-align: right;
+
+  .switch {
+    display: inline-block;
+    position: relative;
+    flex: 0 0 70px;
+    width: 70px;
+    height: 30px;
+
+    input {
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+
+    input + .slider::after {
+      content: "Night";
+      position: absolute;
+      top: 0.4rem;
+      right: 0.6rem;
+      font-size: 13px;
+      text-align: right;
+    }
+
+    input:checked + .slider {
+      background-color: hsl(0 0% 30%);
+    }
+
+    input:checked + .slider::after {
+      content: "Dark";
+      position: absolute;
+      top: 0.4rem;
+      left: 1rem;
+      font-size: 13px;
+      text-align: left;
+    }
+
+    input:checked + .slider::before {
+      transform: translateX(39px);
+    }
+
+    .slider {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transition: 0.4s;
+      border-radius: 30px;
+      background-color: hsl(44, 100%, 50%);
+      cursor: pointer;
+    }
+
+    .slider::before {
+      content: "";
+      position: absolute;
+      bottom: 4px;
+      left: 4px;
+      width: 23px;
+      height: 23px;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+      border-radius: 50%;
+      background-color: #fff;
+    }
+  }
+}
+
 .title {
   margin-bottom: 2rem;
+  color: var(--title);
 }
 
 .file {
@@ -100,8 +235,8 @@ button:hover {
     max-width: 600px;
     height: 100px;
     margin: auto;
-    border: 2px dashed #909090;
-    color: #909090;
+    border: 2px dashed hsl(0, 0%, 50%);
+    color: hsl(0, 0%, 50%);
     font-size: 2.2rem;
     cursor: pointer;
   }
@@ -143,7 +278,8 @@ button:hover {
 .highlight-preview {
   position: relative;
   padding: 3.2rem 0 2rem 0;
-  border: 1px solid #000;
+  border: 1px solid var(--title);
+  color: var(--title);
 }
 
 .download-booklist::before,
@@ -153,7 +289,7 @@ button:hover {
   top: -1.8rem;
   left: 1.5rem;
   padding: 0 15px;
-  background-color: #fff;
+  background-color: var(--basic);
   font-size: 2rem;
 }
 
@@ -201,11 +337,11 @@ button:hover {
 
   .bookTitle {
     padding: 0.5rem;
-    border-bottom: 1px solid #dadada;
+    border-bottom: 1px solid var(--dark-text);
     cursor: pointer;
 
     &:hover {
-      background-color: #eee;
+      background-color: var(--text-hover);
     }
   }
 }
@@ -236,6 +372,8 @@ button:hover {
     min-height: 608px;
     max-height: calc(100vh - 508px);
     padding: 1rem;
+    background-color: var(--basic);
+    color: var(--title);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-size: 1.6rem;
     line-height: 1.7;
@@ -244,12 +382,12 @@ button:hover {
 
 footer {
   a {
-    color: #575757;
+    color: var(--text);
   }
 
   display: block;
   margin-top: 3rem;
-  color: #8d8d8d;
+  color: hsl(0, 0%, 50%);
   font-size: 85%;
   line-height: 1.5;
 }

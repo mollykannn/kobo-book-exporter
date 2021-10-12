@@ -1,5 +1,15 @@
 <template>
   <div class="container">
+    <div class="switch-column">
+    <label class="switch">
+      <input
+        type="checkbox"
+        v-on:click="changeMode"
+        :checked="mode == 'dark'"
+      >
+      <span class="slider"></span>
+    </label>
+    </div>
     <h1 class="title">Kobo Book Exporter</h1>
     <div class="file">
       <div
@@ -80,24 +90,25 @@
 
 <script>
 import initSqlJs from 'sql.js'
-import { ref, reactive } from 'vue'
+import { ref, reactive, onMounted } from 'vue'
 
 export default {
-  setup () {
+  setup() {
     const fileName = ref('Drop your .sqlite file here')
     const dbData = ref()
     const exportBookListData = reactive({
       loading: false,
-      content: ''
+      content: '',
     })
     const exportHighlightData = reactive({
       loading: false,
       title: '',
-      content: ''
+      content: '',
     })
     const bookTitleList = ref()
+    const mode = ref()
 
-    function importFile (e) {
+    function importFile(e) {
       var files = e.target.files || e.dataTransfer.files
       var fileReader = new FileReader()
       fileName.value = files[0].name
@@ -148,7 +159,7 @@ export default {
       fileReader.readAsArrayBuffer(files[0])
     }
 
-    function downloadBookList (action) {
+    function downloadBookList(action) {
       const filename = `bookList.${action}`
       let content = ''
       if (action === 'json') {
@@ -174,7 +185,7 @@ export default {
       exportFile(filename, content)
     }
 
-    function previewHighlight (contentID, title) {
+    function previewHighlight(contentID, title) {
       const res = dbData.value.exec(
         `SELECT 
         '#' || row_number() over (partition by B.Title order by T.ContentID, T.ChapterProgress), 
@@ -188,7 +199,7 @@ export default {
       exportHighlightData.content = res[0]?.values.join('\n\n').split(',').join('  \n')
     }
 
-    function exportFile (filename, content) {
+    function exportFile(filename, content) {
       const element = document.createElement('a')
       element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content))
       element.setAttribute('download', filename)
@@ -197,6 +208,16 @@ export default {
       element.click()
       document.body.removeChild(element)
     }
+
+    function changeMode() {
+      mode.value = document.documentElement.getAttribute('data-theme') == 'dark' ? 'light' : 'dark'
+      document.documentElement.setAttribute('data-theme', mode.value)
+    }
+
+    onMounted(() => {
+      mode.value = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+      document.documentElement.setAttribute('data-theme', mode.value)
+    })
 
     return {
       fileName,
@@ -207,8 +228,10 @@ export default {
       importFile,
       exportFile,
       downloadBookList,
-      previewHighlight
+      previewHighlight,
+      changeMode,
+      mode,
     }
-  }
+  },
 }
 </script>
