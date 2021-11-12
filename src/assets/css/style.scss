@@ -16,20 +16,27 @@ $Small: "only screen and (max-width : 650px)";
   --brand-saturation: 50%;
   --brand-lightness: 97%;
   --light-basic: hsl(var(--brand-hue) 0% 100%);
-  --light-background: hsl(var(--brand-hue) var(--brand-saturation) var(--brand-lightness));
+  --light-background:
+    hsl(
+      var(--brand-hue) var(--brand-saturation) var(--brand-lightness)
+    );
   --light-title: hsl(var(--brand-hue) 0% 10%);
-  --light-text: hsl(var(--brand-hue), 0%, 30%);
-  --light-text-hover: hsl(var(--brand-hue), 0%, 90%);
-  --light-button: hsl(140, 100%, 38%);
-  --light-button-hover: hsl(140, 100%, 28%);
+  --light-text: hsl(var(--brand-hue) 0% 30%);
+  --light-text-hover: hsl(var(--brand-hue) 0% 90%);
+  --light-button: hsl(140deg 100% 38%);
+  --light-button-hover: hsl(140deg 100% 28%);
   --light-button-text: hsl(var(--brand-hue) 0% 100%);
   --dark-basic: hsl(var(--brand-hue) 0% 0%);
-  --dark-background: hsl(var(--brand-hue) calc(var(--brand-saturation) / 50) calc(var(--brand-lightness) / 10));
+  --dark-background:
+    hsl(
+      var(--brand-hue) calc(var(--brand-saturation) / 50)
+      calc(var(--brand-lightness) / 10)
+    );
   --dark-title: hsl(var(--brand-hue) 0% 90%);
-  --dark-text: hsl(var(--brand-hue), 0%, 70%);
-  --dark-text-hover: hsl(var(--brand-hue), 0%, 20%);
-  --dark-button: hsl(140, 85%, 30%);
-  --dark-button-hover: hsl(140, 100%, 20%);
+  --dark-text: hsl(var(--brand-hue) 0% 70%);
+  --dark-text-hover: hsl(var(--brand-hue) 0% 20%);
+  --dark-button: hsl(140deg 85% 30%);
+  --dark-button-hover: hsl(140deg 100% 20%);
   --dark-button-text: hsl(var(--brand-hue) 0% 0%);
 }
 
@@ -89,7 +96,19 @@ body {
   height: 100%;
   margin: 0;
   background-color: var(--background);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 1.7;
@@ -98,7 +117,6 @@ body {
 button {
   display: inline-block;
   padding: 0.3rem 1.3rem;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
   border: none;
   outline: none;
@@ -167,7 +185,7 @@ button:hover {
     input {
       width: 0;
       height: 0;
-      opacity: 0;
+      opacity: 0%;
     }
 
     input + .slider::after {
@@ -179,8 +197,32 @@ button:hover {
       text-align: right;
     }
 
+    .slider {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transition: 0.4s;
+      border-radius: 30px;
+      background-color: hsl(44deg 100% 50%);
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 4px;
+        left: 4px;
+        width: 23px;
+        height: 23px;
+        transition: 0.4s;
+        border-radius: 50%;
+        background-color: #fff;
+      }
+    }
+
     input:checked + .slider {
-      background-color: hsl(0 0% 30%);
+      background-color: hsl(0deg 0% 30%);
     }
 
     input:checked + .slider::after {
@@ -194,31 +236,6 @@ button:hover {
 
     input:checked + .slider::before {
       transform: translateX(39px);
-    }
-
-    .slider {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      transition: 0.4s;
-      border-radius: 30px;
-      background-color: hsl(44, 100%, 50%);
-      cursor: pointer;
-    }
-
-    .slider::before {
-      content: "";
-      position: absolute;
-      bottom: 4px;
-      left: 4px;
-      width: 23px;
-      height: 23px;
-      -webkit-transition: 0.4s;
-      transition: 0.4s;
-      border-radius: 50%;
-      background-color: #fff;
     }
   }
 }
@@ -238,8 +255,8 @@ button:hover {
     max-width: 600px;
     height: 100px;
     margin: auto;
-    border: 2px dashed hsl(0, 0%, 50%);
-    color: hsl(0, 0%, 50%);
+    border: 2px dashed hsl(0deg 0% 50%);
+    color: hsl(0deg 0% 50%);
     font-size: 2.2rem;
     cursor: pointer;
   }
@@ -280,7 +297,7 @@ button:hover {
 .booklist,
 .highlight-preview {
   position: relative;
-  padding: 3.2rem 0 2rem 0;
+  padding: 3.2rem 0 2rem;
   border: 1px solid var(--title);
   color: var(--title);
 }
@@ -338,7 +355,7 @@ button:hover {
     overflow-y: scroll;
   }
 
-  .bookTitle {
+  .book-title {
     padding: 0.5rem;
     border-bottom: 1px solid var(--dark-text);
     cursor: pointer;
@@ -352,7 +369,7 @@ button:hover {
 .highlight-preview {
   min-height: 708px;
   max-height: calc(100vh - 608px);
-  padding: 3.2rem 1.5rem 2rem 1.5rem;
+  padding: 3.2rem 1.5rem 2rem;
 
   .highlight-details {
     display: flex;
@@ -361,12 +378,9 @@ button:hover {
     margin-bottom: 1em;
 
     .highlight-title {
-      display: -webkit-box;
       flex: 1;
       overflow: hidden;
       text-align: left;
-      -webkit-line-clamp: 1;
-      -webkit-box-orient: vertical;
     }
   }
 
@@ -377,7 +391,19 @@ button:hover {
     padding: 1rem;
     background-color: var(--basic);
     color: var(--title);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Fira Sans",
+      "Droid Sans",
+      "Helvetica Neue",
+      sans-serif;
     font-size: 1.6rem;
     line-height: 1.7;
   }
@@ -390,7 +416,7 @@ footer {
 
   display: block;
   margin-top: 3rem;
-  color: hsl(0, 0%, 50%);
+  color: hsl(0deg 0% 50%);
   font-size: 85%;
   line-height: 1.5;
 }

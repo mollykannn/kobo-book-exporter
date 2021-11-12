@@ -6,9 +6,5 @@ module.exports = {
   plugins: ["stylelint-order", "stylelint-scss"],
   rules: {
     "order/properties-order": [sortOrderSmacss()],
-    "no-descending-specificity": null,
-    "at-rule-no-unknown": null,
-    "scss/at-rule-no-unknown": true,
-    "font-family-no-missing-generic-family-keyword": null,
   },
 };
