@@ -4204,13 +4204,21 @@ workbox-sw@6.3.0:
   resolved "https://registry.yarnpkg.com/workbox-sw/-/workbox-sw-6.3.0.tgz#8b805a3ac5339e8df0e6ba36c491d9cd01aa9f3f"
   integrity sha512-xwrXRBzw5jwJ7VdAQkTSNTbNZ4S6VhXtbZZ0vY6XKNQARO5nuGphNdif+hJFIejHUgtV6ESpQnixPj5hYB2jKQ==
 
-workbox-window@6.3.0, workbox-window@^6.3.0:
+workbox-window@6.3.0:
   version "6.3.0"
   resolved "https://registry.yarnpkg.com/workbox-window/-/workbox-window-6.3.0.tgz#f669a0715363c35e519d1b6d919e04da7ce369ea"
   integrity sha512-CFP84assX9srH/TOx4OD8z4EBPO/Cq4WKdV2YLcJIFJmVTS/cB63XKeidKl2KJk8qOOLVIKnaO7BLmb0MxGFtA==
   dependencies:
     "@types/trusted-types" "^2.0.2"
     workbox-core "6.3.0"
+
+workbox-window@^6.3.0, workbox-window@^6.4.1:
+  version "6.4.1"
+  resolved "https://registry.yarnpkg.com/workbox-window/-/workbox-window-6.4.1.tgz#4d78285e57f98c3f0b98934812648c386ae433a9"
+  integrity sha512-v5G1U+NN0sHErvE9fzHRA75FrfRFj/0dihFnvno5yqHZZIb9G4U2AarodSDRBC3t6CsnLO68l1Bj1gsHqsM9Qw==
+  dependencies:
+    "@types/trusted-types" "^2.0.2"
+    workbox-core "6.4.1"
 
 wrappy@1:
   version "1.0.2"
