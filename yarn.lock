@@ -3722,10 +3722,10 @@ vite-plugin-eslint@^1.3.0:
     eslint "^7.26.0"
     rollup "^2.47.0"
 
-vite-plugin-pwa@^0.11.7:
-  version "0.11.7"
-  resolved "https://registry.yarnpkg.com/vite-plugin-pwa/-/vite-plugin-pwa-0.11.7.tgz#243a8ed919d1daedbe976d3deb541a19822d353d"
-  integrity sha512-sU+VrUNVP87E79GCCBTusdoiqja3Qapsrp48+xFDf28zaeNZ2nuuCoCIPshmyusGuY0I51wRFxiBjcbdheEBSw==
+vite-plugin-pwa@^0.11.10:
+  version "0.11.10"
+  resolved "https://registry.yarnpkg.com/vite-plugin-pwa/-/vite-plugin-pwa-0.11.10.tgz#acd6153ae5af313185ea7d697140b78d84046cf0"
+  integrity sha512-H2iIe6XVN8it0jkrpZcdmBaGarZxeA657y+9WeDKtxjRJmwIL8qixhiE9FZr0SFS2OHyzkumJvE7FOaemt1/SQ==
   dependencies:
     chalk "^4.1.2"
     debug "^4.3.2"
