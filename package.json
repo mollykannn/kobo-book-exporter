@@ -17,7 +17,7 @@
     "@vitejs/plugin-vue": "^1.10.1",
     "@vue/compiler-sfc": "^3.2.21",
     "eslint": "^8.4.0",
-    "eslint-plugin-vue": "^8.1.1",
+    "eslint-plugin-vue": "^8.2.0",
     "rollup-plugin-copy": "^3.4.0",
     "sass": "^1.44.0",
     "stylelint": "^14.1.0",
