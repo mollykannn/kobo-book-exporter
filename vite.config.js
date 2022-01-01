@@ -7,13 +7,11 @@ import viteStylelint from '@amatlash/vite-plugin-stylelint'
 import path from 'path'
 
 export default defineConfig({
-  build: {
-    sourcemap: process.env.SOURCE_MAP === 'true'
-  },
   base: '/kobo-book-exporter',
   plugins: [
     vue(),
     viteStylelint(),
+    eslintPlugin(),
     VitePWA({
       mode: 'development',
       srcDir: 'src',
