@@ -1098,6 +1098,16 @@
     estree-walker "^2.0.2"
     source-map "^0.6.1"
 
+"@vue/compiler-core@3.2.28":
+  version "3.2.28"
+  resolved "https://registry.yarnpkg.com/@vue/compiler-core/-/compiler-core-3.2.28.tgz#7f6aa4b167f0ae0413f3c36e507c898db06e8fe8"
+  integrity sha512-mQpfEjmHVxmWKaup0HL6tLMv2HqjjJu7XT4/q0IoUXYXC4xKG8lIVn5YChJqxBTLPuQjzas7u7i9L4PAWJZRtA==
+  dependencies:
+    "@babel/parser" "^7.16.4"
+    "@vue/shared" "3.2.28"
+    estree-walker "^2.0.2"
+    source-map "^0.6.1"
+
 "@vue/compiler-dom@3.2.26":
   version "3.2.26"
   resolved "https://registry.yarnpkg.com/@vue/compiler-dom/-/compiler-dom-3.2.26.tgz#c7a7b55d50a7b7981dd44fc28211df1450482667"
@@ -1106,7 +1116,15 @@
     "@vue/compiler-core" "3.2.26"
     "@vue/shared" "3.2.26"
 
-"@vue/compiler-sfc@3.2.26", "@vue/compiler-sfc@^3.2.26":
+"@vue/compiler-dom@3.2.28":
+  version "3.2.28"
+  resolved "https://registry.yarnpkg.com/@vue/compiler-dom/-/compiler-dom-3.2.28.tgz#cc32a987fee50673f25430df35ea943f252c23e6"
+  integrity sha512-KA4yXceLteKC7VykvPnViUixemQw3A+oii+deSbZJOQKQKVh1HLosI10qxa8ImPCyun41+wG3uGR+tW7eu1W6Q==
+  dependencies:
+    "@vue/compiler-core" "3.2.28"
+    "@vue/shared" "3.2.28"
+
+"@vue/compiler-sfc@3.2.26":
   version "3.2.26"
   resolved "https://registry.yarnpkg.com/@vue/compiler-sfc/-/compiler-sfc-3.2.26.tgz#3ce76677e4aa58311655a3bea9eb1cb804d2273f"
   integrity sha512-ePpnfktV90UcLdsDQUh2JdiTuhV0Skv2iYXxfNMOK/F3Q+2BO0AulcVcfoksOpTJGmhhfosWfMyEaEf0UaWpIw==
@@ -1122,6 +1140,22 @@
     postcss "^8.1.10"
     source-map "^0.6.1"
 
+"@vue/compiler-sfc@^3.2.28":
+  version "3.2.28"
+  resolved "https://registry.yarnpkg.com/@vue/compiler-sfc/-/compiler-sfc-3.2.28.tgz#0a576c09abc72d6a76b153133de6fd7599c182c3"
+  integrity sha512-zB0WznfEBb4CbGBHzhboHDKVO5nxbkbxxFo9iVlxObP7a9/qvA5kkZEuT7nXP52f3b3qEfmVTjIT23Lo1ndZdQ==
+  dependencies:
+    "@babel/parser" "^7.16.4"
+    "@vue/compiler-core" "3.2.28"
+    "@vue/compiler-dom" "3.2.28"
+    "@vue/compiler-ssr" "3.2.28"
+    "@vue/reactivity-transform" "3.2.28"
+    "@vue/shared" "3.2.28"
+    estree-walker "^2.0.2"
+    magic-string "^0.25.7"
+    postcss "^8.1.10"
+    source-map "^0.6.1"
+
 "@vue/compiler-ssr@3.2.26":
   version "3.2.26"
   resolved "https://registry.yarnpkg.com/@vue/compiler-ssr/-/compiler-ssr-3.2.26.tgz#fd049523341fbf4ab5e88e25eef566d862894ba7"
@@ -1129,6 +1163,14 @@
   dependencies:
     "@vue/compiler-dom" "3.2.26"
     "@vue/shared" "3.2.26"
+
+"@vue/compiler-ssr@3.2.28":
+  version "3.2.28"
+  resolved "https://registry.yarnpkg.com/@vue/compiler-ssr/-/compiler-ssr-3.2.28.tgz#411e8b3bdc3183b2acd35e6551734b34366d64e5"
+  integrity sha512-z8rck1PDTu20iLyip9lAvIhaO40DUJrw3Zv0mS4Apfh3PlfWpF5dhsO5g0dgt213wgYsQIYVIlU9cfrYapqRgg==
+  dependencies:
+    "@vue/compiler-dom" "3.2.28"
+    "@vue/shared" "3.2.28"
 
 "@vue/reactivity-transform@3.2.26":
   version "3.2.26"
@@ -1138,6 +1180,17 @@
     "@babel/parser" "^7.16.4"
     "@vue/compiler-core" "3.2.26"
     "@vue/shared" "3.2.26"
+    estree-walker "^2.0.2"
+    magic-string "^0.25.7"
+
+"@vue/reactivity-transform@3.2.28":
+  version "3.2.28"
+  resolved "https://registry.yarnpkg.com/@vue/reactivity-transform/-/reactivity-transform-3.2.28.tgz#e0abf86694f4d182f974fbac934fc3e23e0a6d9b"
+  integrity sha512-zE8idNkOPnBDd2tKSIk84hOQZ+jXKvSy5FoIIVlcNEJHnCFnQ3maqeSJ9KoB2Rf6EXUhFTiTDNRlYlXmT2uHbQ==
+  dependencies:
+    "@babel/parser" "^7.16.4"
+    "@vue/compiler-core" "3.2.28"
+    "@vue/shared" "3.2.28"
     estree-walker "^2.0.2"
     magic-string "^0.25.7"
 
@@ -1177,6 +1230,11 @@
   version "3.2.26"
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.2.26.tgz#7acd1621783571b9a82eca1f041b4a0a983481d9"
   integrity sha512-vPV6Cq+NIWbH5pZu+V+2QHE9y1qfuTq49uNWw4f7FDEeZaDU2H2cx5jcUZOAKW7qTrUS4k6qZPbMy1x4N96nbA==
+
+"@vue/shared@3.2.28":
+  version "3.2.28"
+  resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.2.28.tgz#5b0b1840432031d0ea1adff633b356a503e87048"
+  integrity sha512-eMQ8s9j8FpbGHlgUAaj/coaG3Q8YtMsoWL/RIHTsE3Ex7PUTyr7V91vB5HqWB5Sn8m4RXTHGO22/skoTUYvp0A==
 
 acorn-jsx@^5.3.1:
   version "5.3.2"
