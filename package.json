@@ -22,7 +22,7 @@
     "postcss-scss": "^4.0.3",
     "rollup-plugin-copy": "^3.4.0",
     "sass": "^1.50.0",
-    "stylelint": "^14.6.1",
+    "stylelint": "^14.7.0",
     "stylelint-config-property-sort-order-smacss": "^9.0.0",
     "stylelint-config-recommended-vue": "^1.4.0",
     "stylelint-order": "^5.0.0",
