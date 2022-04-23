@@ -1,264 +1,31 @@
-$Extra-large: "only screen and (max-width : 1200px)";
-$Large: "only screen and (max-width : 992px)";
-$Medium: "only screen and (max-width : 768px)";
-$Small: "only screen and (max-width : 650px)";
+@import 'basic.scss';
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
-}
-
-* {
-  --brand-hue: 30;
-  --brand-saturation: 50%;
-  --brand-lightness: 97%;
-  --light-basic: hsl(var(--brand-hue) 0% 100%);
-  --light-background:
-    hsl(
-      var(--brand-hue) var(--brand-saturation) var(--brand-lightness)
-    );
-  --light-title: hsl(var(--brand-hue) 0% 10%);
-  --light-text: hsl(var(--brand-hue) 0% 30%);
-  --light-text-hover: hsl(var(--brand-hue) 0% 90%);
-  --light-button: hsl(140deg 100% 38%);
-  --light-button-hover: hsl(140deg 100% 28%);
-  --light-button-text: hsl(var(--brand-hue) 0% 100%);
-  --dark-basic: hsl(var(--brand-hue) 0% 0%);
-  --dark-background:
-    hsl(
-      var(--brand-hue) calc(var(--brand-saturation) / 50)
-      calc(var(--brand-lightness) / 10)
-    );
-  --dark-title: hsl(var(--brand-hue) 0% 90%);
-  --dark-text: hsl(var(--brand-hue) 0% 70%);
-  --dark-text-hover: hsl(var(--brand-hue) 0% 20%);
-  --dark-button: hsl(140deg 85% 30%);
-  --dark-button-hover: hsl(140deg 100% 20%);
-  --dark-button-text: hsl(var(--brand-hue) 0% 0%);
-}
-
-:root {
-  --background: var(--light-background);
-  --basic: var(--light-basic);
-  --title: var(--light-title);
-  --text: var(--light-text);
-  --text-hover: var(--light-text-hover);
-  --button: var(--light-button);
-  --button-hover: var(--light-button-hover);
-  --button-text: var(--light-button-text);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: var(--dark-background);
-    --basic: var(--dark-basic);
-    --title: var(--dark-title);
-    --text: var(--dark-text);
-    --text-hover: var(--dark-text-hover);
-    --button: var(--dark-button);
-    --button-hover: var(--dark-button-hover);
-    --button-text: var(--dark-button-text);
-  }
-}
-
-[data-theme="light"] {
-  --background: var(--light-background);
-  --basic: var(--light-basic);
-  --title: var(--light-title);
-  --text: var(--light-text);
-  --text-hover: var(--light-text-hover);
-  --button: var(--light-button);
-  --button-hover: var(--light-button-hover);
-  --button-text: var(--light-button-text);
-}
-
-[data-theme="dark"] {
-  --background: var(--dark-background);
-  --basic: var(--dark-basic);
-  --title: var(--dark-title);
-  --text: var(--dark-text);
-  --text-hover: var(--dark-text-hover);
-  --button: var(--dark-button);
-  --button-hover: var(--dark-button-hover);
-  --button-text: var(--dark-button-text);
-}
-
-html {
-  box-sizing: border-box;
-  height: 100%;
-  font-size: 62.5%;
-}
-
-body {
-  height: 100%;
-  margin: 0;
-  background-color: var(--background);
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Fira Sans",
-    "Droid Sans",
-    "Helvetica Neue",
-    sans-serif;
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 1.7;
-}
-
-button {
-  display: inline-block;
-  padding: 0.3rem 1.3rem;
-  transition: 0.3s;
-  border: none;
-  outline: none;
-  background: none;
-  background-color: var(--button);
-  color: var(--button-text);
-  font: inherit;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: var(--button-hover);
-}
-
-#app {
-  max-width: 1170px;
-  min-height: 100vh;
-  margin: 0 auto;
-  background-color: var(--basic);
-
-  @media #{$Extra-large} {
-    max-width: 980px;
-  }
-
-  @media #{$Large} {
-    max-width: 730px;
-  }
-
-  @media #{$Medium} {
-    max-width: 650px;
-  }
-
-  @media #{$Small} {
-    flex: 1;
-  }
-}
-
-.container {
-  padding: 1.5em;
+.title {
+  color: var(--title);
   text-align: center;
 }
 
-.hide {
-  display: none;
-}
-
-.small {
-  display: block;
-  max-width: 600px;
-  margin: 1rem auto;
-  color: var(--text);
-  font-size: 90%;
-  line-height: 1.5;
-}
-
-.switch-column {
-  text-align: right;
-
-  .switch {
-    display: inline-block;
-    position: relative;
-    flex: 0 0 70px;
-    width: 70px;
-    height: 30px;
-
-    input {
-      width: 0;
-      height: 0;
-      opacity: 0%;
-    }
-
-    input + .slider::after {
-      content: "Night";
-      position: absolute;
-      top: 0.4rem;
-      right: 0.6rem;
-      font-size: 13px;
-      text-align: right;
-    }
-
-    .slider {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      transition: 0.4s;
-      border-radius: 30px;
-      background-color: hsl(44deg 100% 50%);
-      cursor: pointer;
-
-      &::before {
-        content: "";
-        position: absolute;
-        bottom: 4px;
-        left: 4px;
-        width: 23px;
-        height: 23px;
-        transition: 0.4s;
-        border-radius: 50%;
-        background-color: #fff;
-      }
-    }
-
-    input:checked + .slider {
-      background-color: hsl(0deg 0% 30%);
-    }
-
-    input:checked + .slider::after {
-      content: "Dark";
-      position: absolute;
-      top: 0.4rem;
-      left: 1rem;
-      font-size: 13px;
-      text-align: left;
-    }
-
-    input:checked + .slider::before {
-      transform: translateX(39px);
-    }
-  }
-}
-
-.title {
-  margin-bottom: 2rem;
-  color: var(--title);
-}
-
 .file {
-  margin-bottom: 8rem;
+  text-align: center;
 
-  .file-upload {
+  & .file-upload {
     display: flex;
     align-items: center;
     justify-content: center;
     max-width: 600px;
     height: 100px;
     margin: auto;
-    border: 2px dashed hsl(0deg 0% 50%);
+    border: 0.2rem dashed hsl(0deg 0% 50%);
     color: hsl(0deg 0% 50%);
     font-size: 2.2rem;
     cursor: pointer;
+  }
+  & .small {
+    display: block;
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--text);
+    font-size: 90%;
   }
 }
 
@@ -272,23 +39,14 @@ button:hover {
 
     @media #{$Large} {
       flex: 0 0 100%;
-      padding: 0;
     }
   }
 
   .content-left {
-    padding-right: 1.5rem;
+    padding-right: 2rem;
 
     @media #{$Large} {
-      padding: 0;
-    }
-  }
-
-  .content-right {
-    padding-left: 1.5rem;
-
-    @media #{$Large} {
-      padding: 0;
+      padding-right: 0;
     }
   }
 }
@@ -297,8 +55,9 @@ button:hover {
 .booklist,
 .highlight-preview {
   position: relative;
-  padding: 3.2rem 0 2rem;
-  border: 1px solid var(--title);
+  margin-top: 3rem;
+  padding: 2rem 1.5rem;
+  border: 0.1rem solid var(--title);
   color: var(--title);
 }
 
@@ -308,7 +67,7 @@ button:hover {
   position: absolute;
   top: -1.8rem;
   left: 1.5rem;
-  padding: 0 15px;
+  padding: 0 1.5rem;
   background-color: var(--basic);
   font-size: 2rem;
 }
@@ -318,18 +77,24 @@ button:hover {
 }
 
 .download-booklist {
-  margin-bottom: 3em;
-
+  text-align: center;
   &::before {
     content: "Export Book List";
   }
 
-  button {
-    margin: 0 1rem;
+  & button {
+    margin-right: 1rem;
+    &:last-child {
+      margin-right: 0;
+    }
 
     @media #{$Small} {
-      width: calc(100% - 2.5rem);
-      margin: 0.5rem 0;
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 1rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }
@@ -337,15 +102,9 @@ button:hover {
 .booklist {
   min-height: 574px;
   max-height: calc(100vh - 474px);
-  padding-left: 1.5rem;
-  text-align: left;
 
   &::before {
     content: "Export Highlight";
-  }
-
-  @media #{$Large} {
-    margin-bottom: 3em;
   }
 
   .booklist-scroll {
@@ -357,7 +116,7 @@ button:hover {
 
   .book-title {
     padding: 0.5rem;
-    border-bottom: 1px solid var(--dark-text);
+    border-bottom: 0.1rem solid var(--dark-text);
     cursor: pointer;
 
     &:hover {
@@ -367,56 +126,33 @@ button:hover {
 }
 
 .highlight-preview {
-  min-height: 708px;
-  max-height: calc(100vh - 608px);
-  padding: 3.2rem 1.5rem 2rem;
-
   .highlight-details {
     display: flex;
     align-items: center;
-    height: 33px;
-    margin-bottom: 1em;
 
     .highlight-title {
       flex: 1;
-      overflow: hidden;
-      text-align: left;
     }
   }
 
   .highlight-textarea {
     width: 100%;
-    min-height: 608px;
-    max-height: calc(100vh - 508px);
+    min-height: 589px;
+    max-height: calc(100vh - 489px);
     padding: 1rem;
     background-color: var(--basic);
     color: var(--title);
-    font-family:
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      Roboto,
-      Oxygen,
-      Ubuntu,
-      Cantarell,
-      "Fira Sans",
-      "Droid Sans",
-      "Helvetica Neue",
-      sans-serif;
+    font-family: var(--font);
     font-size: 1.6rem;
     line-height: 1.7;
   }
 }
 
 footer {
+  color: hsl(0deg 0% 50%);
+  font-size: 85%;
+  text-align: center;
   a {
     color: var(--text);
   }
-
-  display: block;
-  margin-top: 3rem;
-  color: hsl(0deg 0% 50%);
-  font-size: 85%;
-  line-height: 1.5;
 }

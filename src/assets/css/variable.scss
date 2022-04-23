@@ -1,0 +1,64 @@
+$Extra-large: "only screen and (max-width : 1200px)";
+$Large: "only screen and (max-width : 992px)";
+$Medium: "only screen and (max-width : 768px)";
+$Small: "only screen and (max-width : 650px)";
+
+* {
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --brand-hue: 30;
+  --brand-saturation: 50%;
+  --brand-lightness: 97%;
+  --light-basic: hsl(var(--brand-hue) 0% 100%);
+  --light-background:
+    hsl(
+      var(--brand-hue) var(--brand-saturation) var(--brand-lightness)
+    );
+  --light-title: hsl(var(--brand-hue) 0% 10%);
+  --light-text: hsl(var(--brand-hue) 0% 30%);
+  --light-text-hover: hsl(var(--brand-hue) 0% 90%);
+  --light-button-text: hsl(var(--brand-hue) 0% 100%);
+  --dark-basic: hsl(var(--brand-hue) 0% 0%);
+  --dark-background:
+    hsl(
+      var(--brand-hue) calc(var(--brand-saturation) / 50)
+      calc(var(--brand-lightness) / 10)
+    );
+  --dark-title: hsl(var(--brand-hue) 0% 90%);
+  --dark-text: hsl(var(--brand-hue) 0% 70%);
+  --dark-text-hover: hsl(var(--brand-hue) 0% 20%);
+  --dark-button-text: hsl(var(--brand-hue) 0% 0%);
+}
+
+:root {
+  --background: var(--light-background);
+  --basic: var(--light-basic);
+  --title: var(--light-title);
+  --text: var(--light-text);
+  --text-hover: var(--light-text-hover);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--dark-background);
+    --basic: var(--dark-basic);
+    --title: var(--dark-title);
+    --text: var(--dark-text);
+    --text-hover: var(--dark-text-hover);
+  }
+}
+
+[data-theme="light"] {
+  --background: var(--light-background);
+  --basic: var(--light-basic);
+  --title: var(--light-title);
+  --text: var(--light-text);
+  --text-hover: var(--light-text-hover);
+}
+
+[data-theme="dark"] {
+  --background: var(--dark-background);
+  --basic: var(--dark-basic);
+  --title: var(--dark-title);
+  --text: var(--dark-text);
+  --text-hover: var(--dark-text-hover);
+}
