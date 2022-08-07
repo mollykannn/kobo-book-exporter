@@ -16,6 +16,5 @@ module.exports = {
   ],
   rules: {
     'order/properties-order': [sortOrderSmacss()],
-    'max-line-length': 150,
   },
 }

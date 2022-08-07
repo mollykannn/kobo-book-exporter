@@ -1,24 +1,21 @@
+import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import copy from 'rollup-plugin-copy'
 import { VitePWA } from 'vite-plugin-pwa'
 import eslintPlugin from 'vite-plugin-eslint'
-import viteStylelint from '@amatlash/vite-plugin-stylelint'
-import path from 'path'
+import StylelintPlugin from 'vite-plugin-stylelint'
 
 export default defineConfig({
   base: '/kobo-book-exporter',
   plugins: [
     vue(),
-    viteStylelint(),
-    eslintPlugin(),
     VitePWA({
+      workbox: {
+        sourcemap: true
+      },
       mode: 'development',
-      srcDir: 'src',
-      filename: 'sw.js',
       base: '/kobo-book-exporter/',
       registerType: 'autoUpdate',
-      strategies: 'injectManifest',
       includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
       manifest: {
         name: 'Kobo Book Exporter',
@@ -55,21 +52,16 @@ export default defineConfig({
         ]
       }
     }),
-    eslintPlugin({
-      include: ['src/**/*.vue', 'src/**/*.js']
+    StylelintPlugin({
+      fix: true,
     }),
-    copy({
-      targets: [
-        { src: 'node_modules/sql.js/dist/sql-wasm.wasm', dest: './public' },
-      ]
-    })
+    eslintPlugin({
+      include: ['src/**/*.vue', 'src/**/*.js'],
+    }),
   ],
   resolve: {
-    alias: [
-      {
-        find: '@',
-        replacement: path.resolve(__dirname, 'src')
-      }
-    ]
-  }
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
 })
