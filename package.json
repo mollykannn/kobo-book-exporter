@@ -28,6 +28,6 @@
     "vite": "^3.0.4",
     "vite-plugin-eslint": "^1.7.0",
     "vite-plugin-pwa": "^0.12.3",
-    "vite-plugin-stylelint": "^3.0.6"
+    "vite-plugin-stylelint": "^3.0.7"
   }
 }
