@@ -21,7 +21,7 @@
     "postcss-scss": "^4.0.4",
     "prettier": "^2.7.1",
     "sass": "^1.55.0",
-    "stylelint": "^14.11.0",
+    "stylelint": "^14.13.0",
     "stylelint-config-property-sort-order-smacss": "^9.0.0",
     "stylelint-config-recommended-vue": "^1.4.0",
     "stylelint-order": "^5.0.0",
