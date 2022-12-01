@@ -1463,7 +1463,7 @@ chalk@^4.0.0, chalk@^4.0.2:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
-"chokidar@>=3.0.0 <4.0.0":
+"chokidar@>=3.0.0 <4.0.0", chokidar@^3.5.3:
   version "3.5.3"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.5.3.tgz#1cf37c8707b932bd1af1ae22c0432e2acd1903bd"
   integrity sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==
@@ -3780,12 +3780,12 @@ vite-plugin-pwa@^0.13.1:
     workbox-build "^6.5.4"
     workbox-window "^6.5.4"
 
-vite-plugin-stylelint@^3.0.8:
-  version "3.0.8"
-  resolved "https://registry.yarnpkg.com/vite-plugin-stylelint/-/vite-plugin-stylelint-3.0.8.tgz#5410735923dfdeb357a08068813383497cbdd39f"
-  integrity sha512-LMxvT+3soQBJKe+Ii2MkFEH+/N40k3oGyaX0WsNDLdfRaKh1Ea8DFrg28DtoCTry+fOfE6p5+6hOvG8/cGEBmg==
+vite-plugin-stylelint@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/vite-plugin-stylelint/-/vite-plugin-stylelint-3.3.0.tgz#babfdf8861f4d26cff8d9c8e8a93bb3984c0dc35"
+  integrity sha512-e4Y6pW52v05NouWCJ/LhYsQHwE7InI61pMDp/8FhO2iV77wbxsumGO9tkj6PoUwexFMs0CqVoi1WqY1cToUI3w==
   dependencies:
-    "@rollup/pluginutils" "^4.2.1"
+    chokidar "^3.5.3"
 
 vite@^3.2.4:
   version "3.2.4"
