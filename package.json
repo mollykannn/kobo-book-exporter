@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "sql.js": "^1.8.0",
-    "vue": "^3.2.41"
+    "vue": "^3.2.45"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.2.0",
