@@ -1,11 +1,6 @@
 name: Build and Deploy
 
 on:
-  workflow_run:
-    types:
-      - completed
-    workflows:
-      - 'Auto Merge'
   push:
     branches:
       - main
