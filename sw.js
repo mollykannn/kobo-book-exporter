@@ -85,7 +85,7 @@ define(['./workbox-01d9f47c'], (function (workbox) { 'use strict';
     "revision": null
   }, {
     "url": "index.html",
-    "revision": "c20ea3f40907dc9ff07f39690876621d"
+    "revision": "4ecb657528b35fffa123a5972196a70d"
   }, {
     "url": "registerSW.js",
     "revision": "032da5a09364c2984bbc463bf6bfad9e"
