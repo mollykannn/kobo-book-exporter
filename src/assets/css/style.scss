@@ -36,6 +36,7 @@
   .content-left,
   .content-right {
     flex: 0 0 50%;
+    overflow: hidden;
 
     @media #{$Large} {
       flex: 0 0 100%;
@@ -100,16 +101,13 @@
 }
 
 .booklist {
-  min-height: 574px;
-  max-height: calc(100vh - 474px);
-
   &::before {
     content: "Export Highlight";
   }
 
   .booklist-scroll {
-    min-height: 523px;
-    max-height: calc(100vh - 423px);
+    min-height: 260px;
+    max-height: calc(100vh - 565px);
     padding-right: 1.3rem;
     overflow-y: scroll;
   }
@@ -126,19 +124,24 @@
 }
 
 .highlight-preview {
+  height: calc(100% - 30px);
+
   .highlight-details {
     display: flex;
     align-items: center;
 
     .highlight-title {
       flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
 
   .highlight-textarea {
     width: 100%;
-    min-height: 589px;
-    max-height: calc(100vh - 489px);
+    height: calc(100% - 30px);
+    min-height: 300px;
     padding: 1rem;
     background-color: var(--basic);
     color: var(--title);

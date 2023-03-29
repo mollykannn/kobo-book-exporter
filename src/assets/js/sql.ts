@@ -17,7 +17,7 @@ const BookListSQL = `SELECT
                   WHERE ContentType=6 AND ___UserId IS NOT NULL AND ___UserId != '' AND ___UserId != 'removed'
                   ORDER BY Source desc, Title`;
 
-const HighLightSQL = (contentID) => {
+const HighLightSQL = (contentID: string) :string => {
   return `SELECT
             '#' || row_number() over (partition by B.Title order by T.ContentID, T.ChapterProgress),
             TRIM(REPLACE(REPLACE(T.Text,CHAR(10),''),CHAR(9),''))

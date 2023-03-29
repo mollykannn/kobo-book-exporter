@@ -5,8 +5,8 @@ import { VitePWA } from 'vite-plugin-pwa'
 import eslintPlugin from 'vite-plugin-eslint'
 import StylelintPlugin from 'vite-plugin-stylelint'
 
+// https://vitejs.dev/config/
 export default defineConfig({
-  base: '/kobo-book-exporter',
   plugins: [
     vue(),
     VitePWA({
