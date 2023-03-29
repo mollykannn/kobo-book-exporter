@@ -7,6 +7,7 @@ import StylelintPlugin from 'vite-plugin-stylelint'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/kobo-book-exporter/',
   build: {
     target: 'esnext'
   },
@@ -17,7 +18,6 @@ export default defineConfig({
         sourcemap: true
       },
       mode: 'development',
-      base: '/kobo-book-exporter/',
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
       manifest: {
