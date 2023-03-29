@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Main
 
 on:
   push:
@@ -19,14 +19,13 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd web-page
           pnpm install
-          pnpm run docs:build
+          pnpm run build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: web-page/.vitepress/dist
+          FOLDER: dist
           CLEAN: true
