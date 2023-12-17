@@ -1,14 +1,14 @@
 {
   "name": "vite-project",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "build:electron": "vue-tsc && vite build --mode electron && electron-builder --mac --config",
+    "build:electron:mac": "vue-tsc && vite build --mode electron && electron-builder --mac --config",
     "build:electron:win": "vue-tsc && vite build --mode electron && electron-builder --win --config",
     "build:electron:linux": "vue-tsc && vite build --mode electron && electron-builder --linux --config",
-    "build:electron:all": "vue-tsc && vite build --mode electron && electron-builder --mac --config && electron-builder --win --config && electron-builder --linux --config",
+    "build:electron:all": "vue-tsc && vite build --mode electron && electron-builder --mac  --win --linux --config",
     "preview": "vite preview"
   },
   "dependencies": {

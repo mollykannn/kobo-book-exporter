@@ -26,7 +26,10 @@ dist-ssr
 .stylelintcache
 dist-electron
 dist-page
-# release/linux-unpacked
-# release/win-unpacked
-# release/mac
 release
+
+linux-unpacked
+win-unpacked
+mac
+builder-debug.yml
+builder-effective-config.yaml
