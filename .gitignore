@@ -24,3 +24,9 @@ dist-ssr
 *.sw?
 
 .stylelintcache
+dist-electron
+dist-page
+# release/linux-unpacked
+# release/win-unpacked
+# release/mac
+release

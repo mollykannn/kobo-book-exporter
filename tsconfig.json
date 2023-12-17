@@ -15,6 +15,6 @@
     "noImplicitReturns": false,
     "strictNullChecks":false
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "electron"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
