@@ -4,6 +4,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/electron-userland/electron-builder/master/packages/app-builder-lib/scheme.json",
   "appId": "com.kobo-book-exporter.app",
+  "compression": "maximum",
   "asar": true,
   "productName": "Kobo Book Exporter",
   "directories": {
@@ -15,14 +16,14 @@
   ],
   "mac": {
     "target": [
-      "dmg"
+      "7z"
     ],
     "artifactName": "${productName}-Mac-${version}-Installer.${ext}",
   },
   "win": {
     "target": [
       {
-        "target": "nsis",
+        "target": "7z",
         "arch": [
           "x64"
         ]
@@ -38,7 +39,7 @@
   },
   "linux": {
     "target": [
-      "AppImage"
+      "7z"
     ],
     "artifactName": "${productName}-Linux-${version}.${ext}"
   },
